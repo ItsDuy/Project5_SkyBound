@@ -1,6 +1,6 @@
 extends RigidBody3D
 @onready var bat_model: Node3D = $bat_model
-@onready var player = get_node("") #Add player's node
+@onready var player = get_parent().get_parent().get_node("Player") #Add player's node
 @onready var timer: Timer = $Timer
 
 var health= 3
