@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dess7tva0hmaa"]
+[gd_scene load_steps=9 format=3 uid="uid://dess7tva0hmaa"]
 
 [ext_resource type="PackedScene" uid="uid://chjrhhjvxun3r" path="res://Assets/player/simple_gun/gun_model.glb" id="1_bk5kl"]
 [ext_resource type="Script" uid="uid://bq1i5wuymbpts" path="res://Scripts/player.gd" id="1_ojo44"]
@@ -11,6 +11,8 @@
 
 [sub_resource type="BoxMesh" id="BoxMesh_mcr7h"]
 size = Vector3(0.1, 0.1, 1)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_vgqql"]
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_ojo44")
@@ -54,7 +56,11 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_801yk")
 expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_vgqql")
 volume_db = -10.0
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_vgqql")

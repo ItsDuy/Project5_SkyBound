@@ -1,0 +1,92 @@
+[gd_scene load_steps=6 format=3 uid="uid://veqpg45p3lr4"]
+
+[ext_resource type="Script" uid="uid://p8714q6f71py" path="res://Scripts/network.gd" id="1_ktjfp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b4cby"]
+bg_color = Color(0.3106173, 0.31061706, 0.31061706, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hobmd"]
+bg_color = Color(0.21950102, 0.21950102, 0.21950102, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nan6c"]
+bg_color = Color(0.12941177, 0.12941177, 0.12941177, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b41pr"]
+bg_color = Color(0.12941177, 0.12941177, 0.12941177, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Network_UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ktjfp")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1916.0
+offset_bottom = 1084.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.52500004
+anchor_right = 0.5
+anchor_bottom = 0.52500004
+offset_left = -494.0
+offset_top = -164.00006
+offset_right = 506.0
+offset_bottom = 164.99994
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+
+[node name="server" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_b4cby")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hobmd")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_nan6c")
+theme_override_styles/focus = SubResource("StyleBoxFlat_b41pr")
+text = "Server"
+
+[node name="client" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_b4cby")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hobmd")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_nan6c")
+theme_override_styles/focus = SubResource("StyleBoxFlat_b41pr")
+text = "Client"
+
+[node name="back" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_b4cby")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hobmd")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_nan6c")
+theme_override_styles/focus = SubResource("StyleBoxFlat_b41pr")
+text = "Back
+"
+
+[connection signal="pressed" from="VBoxContainer/server" to="." method="_on_server_pressed"]
+[connection signal="pressed" from="VBoxContainer/client" to="." method="_on_client_pressed"]
+[connection signal="pressed" from="VBoxContainer/back" to="." method="_on_back_pressed"]
