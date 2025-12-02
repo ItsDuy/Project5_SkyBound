@@ -8,7 +8,7 @@ extends RigidBody3D
 signal died
 
 var health= 3
-var speed= randf_range(2.0,4.0)
+var speed= 3.0
 
 func _physics_process(delta) -> void:
 	var dir=global_position.direction_to(player.global_position)

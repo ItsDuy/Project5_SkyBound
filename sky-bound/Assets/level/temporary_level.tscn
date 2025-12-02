@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://dp7sxe5xl5shk"]
 
 [ext_resource type="Texture2D" uid="uid://bos7rridjkps1" path="res://Assets/level/checkboard.png" id="1_cig4d"]
-[ext_resource type="Script" uid="uid://biculg45p8gkf" path="res://Scripts/game.gd" id="1_ugldd"]
+[ext_resource type="Script" path="res://Scripts/game.gd" id="1_ugldd"]
 [ext_resource type="PackedScene" uid="uid://duvamawbugyck" path="res://Scenes/Character/Spawner/mob_spawner_3d.tscn" id="3_e6u40"]
 [ext_resource type="PackedScene" uid="uid://dess7tva0hmaa" path="res://Scenes/player.tscn" id="4_ugldd"]
 [ext_resource type="AudioStream" uid="uid://slrssepful0f" path="res://Assets/Music/Wav/Ambient 10.wav" id="5_2g61u"]
@@ -117,7 +117,7 @@ size = Vector3(17, 11, 15)
 material = SubResource("StandardMaterial3D_pixig")
 
 [node name="Platform8" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.801, -5.375, 20)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.801, -5.375, 17.5)
 use_collision = true
 size = Vector3(29.289215, 11, 15)
 material = SubResource("StandardMaterial3D_pixig")
