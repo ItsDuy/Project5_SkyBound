@@ -1,12 +1,12 @@
 extends Node
 
-signal connected
+signal connected()
 
-const IP_ADDR: String = "172.23.192.1"
+const IP_ADDR: String = "127.0.0.1"
 const PORT:int = 42069
 
 var peer: ENetMultiplayerPeer
-var is_multiplayer := false
+@export var is_multiplayer := false
 
 func start_server() -> void:
 	is_multiplayer = true
@@ -24,7 +24,7 @@ func start_client() -> void:
 	
 func _on_connected():
 	print(">>> NetworkConnection: connected_to_server fired")
-	emit_signal("connected")	
+	emit_signal("connected")
 
 func _on_connection_failed():
 	print(">>> NetworkConnection: connection_failed")

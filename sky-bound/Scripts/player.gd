@@ -47,8 +47,9 @@ func _physics_process(delta: float) -> void:
 		
 		move_and_slide()
 		
-		synced_position = global_position
-		rpc("_update_position", synced_position)
+		if NetworkConnection.is_multiplayer:
+			synced_position = global_position
+			rpc("_update_position", synced_position)
 	else:
 		global_position = synced_position
 		
@@ -80,10 +81,14 @@ func process_gravity(delta) -> void:
 		velocity.y -= 20 * delta
 
 func shoot_bullet() -> void:
-	var new_bullet: Area3D = BULLET.instantiate()
-	%Marker3D.add_child(new_bullet)
-	
-	new_bullet.global_transform = %Marker3D.global_transform
+	rpc("_spawn_bullet", %Marker3D.global_transform, multiplayer.get_unique_id())
+
+@rpc("any_peer", "call_local")
+func _spawn_bullet(xform: Transform3D, shooter: int):
+	var b = BULLET.instantiate()
+	add_child(b)
+	b.global_transform = xform
+	b.shooter_id = shooter
 	audio_stream_player.play()
 
 @rpc("any_peer", "call_local", "unreliable")
