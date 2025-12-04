@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dbbljh6x3a4wm"]
+[gd_scene load_steps=13 format=3 uid="uid://dbbljh6x3a4wm"]
 
 [ext_resource type="PackedScene" uid="uid://b3w2vp0dbsfa4" path="res://Assets/mob/bat/bat_model.glb" id="1_hl0r6"]
 [ext_resource type="Script" uid="uid://ca66he35cvexn" path="res://Scripts/bat_model.gd" id="2_mxyk6"]
@@ -203,30 +203,6 @@ bones/11/rotation = Quaternion(2.660812e-08, 0.6386452, 0.76950145, 3.2031743e-0
 
 [node name="bat" parent="Armature/Skeleton3D" index="0"]
 surface_material_override/0 = ExtResource("3_hl0r6")
-bones/0/position = Vector3(0, 0.015472472, 0)
-bones/1/rotation = Quaternion(0.08760134, 0.074684225, -0.6783657, 0.72565025)
-bones/2/rotation = Quaternion(0.113992766, 0.042325802, 0.34395537, 0.9310794)
-bones/3/rotation = Quaternion(0.16458859, 0.10911402, 0.32908145, 0.92342305)
-bones/4/rotation = Quaternion(0.08760134, -0.074684225, 0.6783657, 0.72565025)
-bones/5/rotation = Quaternion(0.113992766, -0.042325802, -0.34395537, 0.9310794)
-bones/6/rotation = Quaternion(0.16458859, -0.10911402, -0.32908145, 0.92342305)
-bones/7/position = Vector3(0.1309921, -0.22739176, -0.087851465)
-bones/7/rotation = Quaternion(0.26196837, 0.08345512, 0.26575127, 0.9240044)
-bones/8/rotation = Quaternion(3.7419944e-08, 0.7000888, 0.7140557, 2.264297e-08)
-bones/10/position = Vector3(-0.1309921, -0.22739176, -0.087851465)
-bones/10/rotation = Quaternion(0.26196837, -0.083455116, -0.26575127, 0.9240044)
-bones/0/position = Vector3(0, 0.015472472, 0)
-bones/1/rotation = Quaternion(0.08760134, 0.074684225, -0.6783657, 0.72565025)
-bones/2/rotation = Quaternion(0.113992766, 0.042325802, 0.34395537, 0.9310794)
-bones/3/rotation = Quaternion(0.16458859, 0.10911402, 0.32908145, 0.92342305)
-bones/4/rotation = Quaternion(0.08760134, -0.074684225, 0.6783657, 0.72565025)
-bones/5/rotation = Quaternion(0.113992766, -0.042325802, -0.34395537, 0.9310794)
-bones/6/rotation = Quaternion(0.16458859, -0.10911402, -0.32908145, 0.92342305)
-bones/7/position = Vector3(0.1309921, -0.22739176, -0.087851465)
-bones/7/rotation = Quaternion(0.26196837, 0.08345512, 0.26575127, 0.9240044)
-bones/8/rotation = Quaternion(3.7419944e-08, 0.7000888, 0.7140557, 2.264297e-08)
-bones/10/position = Vector3(-0.1309921, -0.22739176, -0.087851465)
-bones/10/rotation = Quaternion(0.26196837, -0.083455116, -0.26575127, 0.9240044)
 
 [node name="AnimationPlayer" parent="." index="1"]
 libraries = {

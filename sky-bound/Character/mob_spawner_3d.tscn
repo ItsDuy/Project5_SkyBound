@@ -5,14 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://b0h60dofcvbfc" path="res://Character/boss_bat.tscn" id="3_i1hj5"]
 [ext_resource type="PackedScene" uid="uid://bw2m6rpraye2r" path="res://Assets/mob/spawner/spawner_model.glb" id="3_l2r5n"]
 
-[sub_resource type="Resource" id="Resource_5pjfe"]
-metadata/__load_path__ = "res://Character/Mob/bat_model.tscn"
-
 [node name="MobSpawner3D" type="Node3D"]
 script = ExtResource("1_fi7xd")
 mob_to_spawn = ExtResource("2_caxdb")
 boss_mob_to_spawn = ExtResource("3_i1hj5")
-mob_to_spawn = SubResource("Resource_5pjfe")
 
 [node name="spawner_model" parent="." instance=ExtResource("3_l2r5n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.025574, 0)

@@ -30,8 +30,4 @@ stream = ExtResource("4_vflu1")
 volume_db = -10.0
 max_db = -5.0
 
-[node name="SyncTimer" type="Timer" parent="."]
-wait_time = 0.05
-
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="SyncTimer" to="." method="_on_sync_timer_timeout"]
