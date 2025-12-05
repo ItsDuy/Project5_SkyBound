@@ -46,5 +46,7 @@ func _on_timer_timeout():
 func get_player():
 	var players = get_tree().get_nodes_in_group("players")
 	if players.size() > 0:
-		return players[0]
+		var random_index = randi() % players.size()
+		print("[BAT]")
+		return players[random_index]
 	return null
