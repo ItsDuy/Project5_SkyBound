@@ -14,17 +14,27 @@ const CAMERA_MAX_DOWN = -80
 const SPEED = 5 # m/s
 
 func _enter_tree() -> void:
-	set_multiplayer_authority(name.to_int())
+	var authority_id = name.to_int()
+	set_multiplayer_authority(authority_id)
+	print("[PLAYER] _enter_tree - name: ", name, ", authority_id: ", authority_id, ", my_unique_id: ", multiplayer.get_unique_id())
 
 func _ready() -> void:
 	add_to_group("players")
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
-	if is_multiplayer_authority():
+	var my_id = multiplayer.get_unique_id()
+	var authority_id = name.to_int()
+	var has_authority = is_multiplayer_authority()
+	
+	print("[PLAYER] _ready - name: ", name, ", my_id: ", my_id, ", authority_id: ", authority_id, ", has_authority: ", has_authority)
+	
+	if has_authority:
 		camera.current = true
+		print("[PLAYER] Camera set to current for player: ", name)
 	else: 
 		camera.current = false
+		print("[PLAYER] Camera NOT set for player: ", name)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:

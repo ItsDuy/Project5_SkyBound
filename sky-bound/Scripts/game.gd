@@ -8,6 +8,8 @@ var player_score = 0
 
 func _ready() -> void:
 	death_panel.hide()
+	if multiplayer.is_server() and multiplayer.multiplayer_peer:
+		_setup_server_observer_camera()
 func increase_score(score):
 	player_score += score # or += scores_per_step if you want to use that export
 	label.text = "Score: " + str(player_score)
@@ -41,3 +43,13 @@ func _on_killplane_body_entered(body: Node3D) -> void:
 	# Only end the game if the player hits the kill plane
 	if body.is_in_group("player") or body.name == "Player":
 		call_deferred("end_game")
+
+func _setup_server_observer_camera() -> void:
+	var camera = Camera3D.new()
+	camera.name = "ServerObserverCamera"
+	camera.position = Vector3(-19, 30, 15)
+	camera.rotation_degrees.x = -90
+	camera.current = true
+	camera.far = 1000.0
+	add_child(camera)
+	print("[GAME] Server observer camera setup at position: ", camera.position)
