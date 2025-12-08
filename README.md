@@ -86,7 +86,4 @@ The game combines fast-paced shooting mechanics with platforming elements, requi
 
 ---
 
-
-Thank you for playing **SkyBound**! We hope you enjoy the game. If you have any questions or feedback, feel free to reach out to us at skybound.support@example.com.
-
 Happy gaming! 🎮
